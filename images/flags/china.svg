@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 40" width="60" height="40" role="img" aria-label="China flag">
+  <rect width="60" height="40" fill="#de2910"/>
+  <!-- big star -->
+  <polygon points="6,12 8.2,14 8,11 10,9 7.4,9.6 6,7.5 4.6,9.6 2,9 4,11 3.8,14" fill="#ffde00" transform="scale(1.1) translate(0,1)"/>
+  <!-- 4 small stars -->
+  <polygon points="16,6 17,8 17,5 19,4 17,4 16,2 15,4 13,4 15,5 14,8" fill="#ffde00" transform="translate(8,4) scale(0.6)"/>
+  <polygon points="16,6 17,8 17,5 19,4 17,4 16,2 15,4 13,4 15,5 14,8" fill="#ffde00" transform="translate(14,6) scale(0.6)"/>
+  <polygon points="16,6 17,8 17,5 19,4 17,4 16,2 15,4 13,4 15,5 14,8" fill="#ffde00" transform="translate(14,10) scale(0.6)"/>
+  <polygon points="16,6 17,8 17,5 19,4 17,4 16,2 15,4 13,4 15,5 14,8" fill="#ffde00" transform="translate(8,12) scale(0.6)"/>
+</svg>

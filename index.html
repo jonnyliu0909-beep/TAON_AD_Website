@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="TAON Advertising Studio - Creative branding, design, and digital solutions. Talent | Ambition | Originality | Networking. We handle the details. You enjoy the results.">
+    <meta name="author" content="TAON Advertising Studio">
+    <meta name="keywords" content="advertising, branding, graphic design, web development, print services, Toronto, Shanghai">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taonadvertising.com/">
+    <meta property="og:title" content="TAON Advertising Studio - Creative Branding & Design Solutions">
+    <meta property="og:description" content="Talent | Ambition | Originality | Networking. We handle the details. You enjoy the results.">
+    <meta property="og:image" content="https://taonadvertising.com/images/logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://taonadvertising.com/">
+    <meta property="twitter:title" content="TAON Advertising Studio - Creative Branding & Design Solutions">
+    <meta property="twitter:description" content="Talent | Ambition | Originality | Networking. We handle the details. You enjoy the results.">
+    <meta property="twitter:image" content="https://taonadvertising.com/images/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+	
+    <title>TAON Advertising Studio - Home</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- Custom CSS -->
+	<link href="css/style.css" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link href="css/animate.css" rel="stylesheet" media="all" type="text/css">
+	
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- 轮播样式 -->
+    <style>
+        /* ===== 强制统一导航栏和Logo样式 ===== */
+        /* 确保 index.html 的导航栏和 logo 与其他页面完全一致 */
+        /* 使用最高优先级确保覆盖所有其他样式 */
+        /* 防止整个页面被缩放 */
+        html body.index-page,
+        html body.index-page * {
+            transform: none !important;
+            -webkit-transform: none !important;
+            -moz-transform: none !important;
+            -ms-transform: none !important;
+            scale: 1 !important;
+            zoom: 1 !important;
+        }
+        body.index-page #menu,
+        body.index-page #menu * {
+            transform: none !important;
+            -webkit-transform: none !important;
+            -moz-transform: none !important;
+            -ms-transform: none !important;
+            scale: 1 !important;
+            zoom: 1 !important;
+        }
+        body.index-page #menu .navbar-brand {
+            padding: 0 18px !important;
+            height: auto !important;
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 12px !important;
+            flex-wrap: nowrap !important;
+        }
+        body.index-page #menu .navbar-brand img {
+            width: 100px !important;
+            height: auto !important;
+            max-width: none !important;
+            min-width: 100px !important;
+            display: block !important;
+            flex-shrink: 0 !important;
+            transform: none !important;
+            scale: 1 !important;
+        }
+        body.index-page #menu .navbar-brand .company-name {
+            font-size: 32px !important;
+            font-weight: 600 !important;
+            color: #333 !important;
+            white-space: nowrap !important;
+            font-family: 'Montserrat', sans-serif !important;
+            letter-spacing: 0.5px !important;
+            line-height: 1.2 !important;
+        }
+        body.index-page #menu ul.nav li a {
+            font-size: 16px !important;
+            padding: 8px 12px !important;
+            font-weight: bold !important;
+            line-height: 1.2 !important;
+            color: #333 !important;
+        }
+        
+        /* ===== 轮播内联样式 ===== */
+        /* 移除容器宽度限制，使轮播全宽 */
+        .box-content.box-1 .container {
+            max-width: 100% !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+        
+        /* 轮播标题样式 - 与 header.subtitle 相同大小 */
+        .carousel-title {
+            font-size: 27px !important; /* 与 header.subtitle 相同 */
+            letter-spacing: 9.75px !important; /* 与 header.subtitle 相同 */
+            text-align: center;
+            margin: 60px 0 30px 0;
+            color: #333;
+            font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
+        }
+        @media(max-width:978px) {
+            .carousel-title {
+                font-size: 24px !important; /* 与 header.subtitle 响应式相同 */
+                letter-spacing: 7.5px !important;
+            }
+        }
+        @media(max-width:767px) {
+            .carousel-title {
+                font-size: 21px !important; /* 与 header.subtitle 响应式相同 */
+                letter-spacing: 6px !important;
+                margin: 40px 0 20px 0;
+            }
+        }
+        
+        .carousel-container {
+            width: 100%;
+            overflow: visible;
+            background: #fff;
+            padding: 40px 0;
+            margin: 0;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .carousel-slide {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .home-three-slide {
+            display: flex;
+            gap: 40px;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 80px; /* 为箭头留出空间 */
+            box-sizing: border-box;
+        }
+
+        .home-three-slide .img-wrap {
+            flex: 1 1 auto;
+            min-width: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+            background: #fff; /* 改为白色，和主题背景一致 */
+            height: 440px;
+            border-radius: 4px;
+        }
+
+        .home-three-slide .img-wrap img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+
+        .home-three-slide .img-wrap img:hover {
+            transform: scale(0.97);
+        }
+
+        /* 轮播控制按钮 - 移到图片外面 */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            box-sizing: border-box;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .carousel-btn {
+            background: rgba(66, 171, 158, 0.9);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            margin: 0 20px; /* 箭头在图片外面 */
+        }
+
+        .carousel-btn:hover {
+            background: rgba(66, 171, 158, 1);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 轮播指示点 */
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 15;
+            pointer-events: auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(200, 200, 200, 0.6);
+            border: 2px solid rgba(66, 171, 158, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: rgba(66, 171, 158, 1);
+            border-color: rgba(66, 171, 158, 1);
+        }
+
+        .carousel-dot:hover {
+            background: rgba(66, 171, 158, 0.8);
+        }
+
+        @media(max-width:1200px) {
+            .home-three-slide .img-wrap { height: 360px; }
+            .home-three-slide { padding: 0 70px; }
+        }
+
+        @media(max-width:991px) {
+            .home-three-slide .img-wrap { height: 300px; }
+            .home-three-slide { padding: 0 60px; gap: 30px; }
+        }
+
+        @media(max-width:767px) {
+            .home-three-slide { 
+                flex-direction: column; 
+                gap: 24px; 
+                padding: 0 60px; /* 为箭头留出空间 */
+            }
+            .home-three-slide .img-wrap { height: 280px; }
+            .carousel-btn { 
+                width: 40px; 
+                height: 40px; 
+                font-size: 16px; 
+                margin: 0 10px;
+            }
+            .carousel-nav { 
+                padding: 0; 
+            }
+            .carousel-dots {
+                bottom: 10px;
+                padding: 6px 12px;
+            }
+        }
+
+        /* ===== 标题首字母放大加粗样式 ===== */
+        .header-title-with-capitals {
+            font-size: 54px; /* 36px * 1.5 */
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .header-title-with-capitals .word-capital {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: #42AB9E;
+            display: inline-block;
+            margin-right: 2px;
+        }
+        .header-title-translation {
+            font-size: 27px; /* 18px * 1.5 */
+            color: #666;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        /* 副标题字体放大1.5倍 - 覆盖 CSS 中的默认值 */
+        body.index-page .header-text p[data-i18n="header.subtitle"] {
+            font-size: 27px !important; /* 18px * 1.5 (原始 desktop 大小) */
+            letter-spacing: 9.75px !important; /* 6.5px * 1.5 */
+            margin-top: 15px !important;
+            margin-bottom: 0 !important;
+        }
+        /* 确保内容不超出方框 */
+        body.index-page .header-text .header-text-inner {
+            max-width: 90vw;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        @media(max-width:978px) {
+            .header-title-with-capitals {
+                font-size: 40.5px; /* 27px * 1.5，但基于36px的响应式应该是39px * 1.5 = 58.5px，这里用更合理的值 */
+            }
+            .header-title-translation {
+                font-size: 20.25px; /* 基于18px的响应式调整 */
+            }
+            body.index-page .header-text p[data-i18n="header.subtitle"] {
+                font-size: 24px !important; /* 16px * 1.5 */
+                letter-spacing: 7.5px !important; /* 5px * 1.5 */
+            }
+        }
+        @media(max-width:767px) {
+            .header-title-with-capitals {
+                font-size: 42px; /* 28px * 1.5 */
+            }
+            .header-title-translation {
+                font-size: 24px; /* 16px * 1.5 */
+            }
+            body.index-page .header-text p[data-i18n="header.subtitle"] {
+                font-size: 21px !important; /* 14px * 1.5，保持合理比例 */
+                letter-spacing: 6px !important;
+            }
+            body.index-page .header-text .header-text-inner {
+                padding: 20px 30px !important;
+                max-width: 95vw;
+            }
+        }
+    </style>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top" class="index-page">
+<div class="wrap-body">
+
+	<!--////////////////////////////////////Header-->
+	<header>
+		<!---Main Header--->
+		<div class="main-header">
+
+			<!--Navigation-->
+			<nav id="menu" class="navbar">
+				<div class="container-fluid">
+					<div class="navbar-header">
+					  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+						<a class="navbar-brand" href="#">
+							<img src="images/logo.png" alt="TAON logo" />
+							<span class="company-name" data-i18n="company.name">Advertising Studio</span>
+						</a>
+					</div>
+
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						<ul class="nav navbar-nav">
+						<li><a href="index.html" data-i18n="nav.home">Home</a></li>
+						<li><a href="single.html" data-i18n="nav.about">ABOUT</a></li>
+						<li><a href="services.html" data-i18n="nav.services">SERVICES</a></li>
+						<li><a href="archive.html" data-i18n="nav.case">CASE</a></li>
+						<li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+						<li class="nav-language"><div id="react-language-switcher"><span class="globe-fallback" aria-hidden="true">🌐</span></div></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+			<div class="header-text">
+				<div class="header-text-inner">
+					<h2 class="header-title-with-capitals">
+						<span class="word-capital">T</span>alent | 
+						<span class="word-capital">A</span>mbition | 
+						<span class="word-capital">O</span>riginality | 
+						<span class="word-capital">N</span>etworking
+					</h2>
+					<p class="header-title-translation" data-i18n="header.title.translation">Talent | Ambition | Originality | Networking</p>
+					<p data-i18n="header.subtitle">We handle the details. You enjoy the results.</p>
+				</div>
+		</div>
+	</header>
+	<!-- /Section: intro -->
+
+
+	<!--////////////////////////////////////Container-->
+	<section id="page-content" class="index-page">
+	
+		<!-- ////////////Content Box 01 轮播组件 -->
+		<section class="box-content box-1">
+		    <div class="container">
+		        <h2 class="carousel-title" data-i18n="carousel.title">Brands We've Worked With</h2>
+		        <div class="carousel-container">
+		            <div class="carousel-wrapper">
+		                <!-- Slide 1: 4 images (a1-a4) -->
+		                <div class="carousel-slide active">
+		                    <div class="home-three-slide">
+		                        <div class="img-wrap"><img src="images/a1.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 1"/></div>
+		                        <div class="img-wrap"><img src="images/a2.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 2"/></div>
+		                        <div class="img-wrap"><img src="images/a3.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 3"/></div>
+		                        <div class="img-wrap"><img src="images/a4.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 4"/></div>
+		                    </div>
+		                </div>
+		                <!-- Slide 2: 4 images (a5-a8) -->
+		                <div class="carousel-slide">
+		                    <div class="home-three-slide">
+		                        <div class="img-wrap"><img src="images/a5.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 5"/></div>
+		                        <div class="img-wrap"><img src="images/a6.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 6"/></div>
+		                        <div class="img-wrap"><img src="images/a7.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 7"/></div>
+		                        <div class="img-wrap"><img src="images/a8.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 8"/></div>
+		                    </div>
+		                </div>
+		                <!-- Slide 3: 4 images (a9-a12) -->
+		                <div class="carousel-slide">
+		                    <div class="home-three-slide">
+		                        <div class="img-wrap"><img src="images/a9.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 9"/></div>
+		                        <div class="img-wrap"><img src="images/a10.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 10"/></div>
+		                        <div class="img-wrap"><img src="images/a11.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 11"/></div>
+		                        <div class="img-wrap"><img src="images/a12.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 12"/></div>
+		                    </div>
+		                </div>
+		                <!-- Slide 4: 4 images (a13-a16) -->
+		                <div class="carousel-slide">
+		                    <div class="home-three-slide">
+		                        <div class="img-wrap"><img src="images/a13.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 13"/></div>
+		                        <div class="img-wrap"><img src="images/a14.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 14"/></div>
+		                        <div class="img-wrap"><img src="images/a15.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 15"/></div>
+		                        <div class="img-wrap"><img src="images/a16.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 16"/></div>
+		                    </div>
+		                </div>
+		                <!-- Slide 5: 4 images (a17-a20) -->
+		                <div class="carousel-slide">
+		                    <div class="home-three-slide">
+		                        <div class="img-wrap"><img src="images/a17.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 17"/></div>
+		                        <div class="img-wrap"><img src="images/a18.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 18"/></div>
+		                         <div class="img-wrap"><img src="images/a19.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 19"/></div>
+		                        <div class="img-wrap"><img src="images/a20.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 20"/></div>
+		                    </div>
+		                </div>
+		                <!-- Slide 6: 4 images (a21-a24) -->
+		                <div class="carousel-slide">
+		                    <div class="home-three-slide">
+		                        <div class="img-wrap"><img src="images/a21.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 21"/></div>
+		                        <div class="img-wrap"><img src="images/a22.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 22"/></div>
+		                        <div class="img-wrap"><img src="images/a23.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 23"/></div>
+		                        <div class="img-wrap"><img src="images/a24.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 24"/></div>
+		                    </div>
+		                </div>
+
+		                <!-- 导航按钮 -->
+		                <div class="carousel-nav">
+		                    <button class="carousel-btn" id="prevBtn"><i class="fa fa-chevron-left"></i></button>
+		                    <button class="carousel-btn" id="nextBtn"><i class="fa fa-chevron-right"></i></button>
+		                </div>
+
+		                <!-- 指示点 -->
+		                <div class="carousel-dots" id="dotsContainer"></div>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+
+	</section>
+
+	<!--////////////////////////////////////Footer-->
+	<footer id="footer">
+		<div class="container">
+			<div class="wrap-footer">
+				
+			</div>
+			<div class="bottom-footer">
+				<ul class="list-inline footer-link link footer-social-icons">
+					<li><a href="https://www.facebook.com/taonadvertisingstudio" target="_blank" title="Facebook" aria-label="Facebook" class="social-icon facebook"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#" title="Instagram" aria-label="Instagram" class="social-icon instagram"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="#" title="X" aria-label="X" class="social-icon twitter"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#" title="YouTube" aria-label="YouTube" class="social-icon youtube"><i class="fa fa-youtube"></i></a></li>
+					<li><a href="#" title="Xiaohongshu" aria-label="Xiaohongshu" class="social-icon xiaohongshu"><i class="fa fa-heart"></i></a></li>
+					<li><a href="#" title="TikTok" aria-label="TikTok" class="social-icon tiktok"><i class="fa fa-music"></i></a></li>
+				</ul>
+				<div class="copyright">
+					<span>Copyright &copy; TAON Advertising Studio All rights reserved.</span>
+				</div>
+			</div> 
+		</div>
+	</footer>
+	<!-- Footer -->
+	<div id="page-top"><a href="#page-top" class="btn btn-toTop"><i class="fa fa-angle-double-up"></i></a></div>
+	
+	<!-- JS -->
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.localScroll.min.js"></script>
+	<script src="js/jquery.scrollTo.min.js"></script>
+	<script src="js/SmoothScroll.js"></script>
+	<script src="js/wow.min.js"></script>
+	
+	<!-- Definity JS - 已修复并启用 -->
+	<script src="js/main.js"></script>
+	
+	<!-- Language switcher - 注意：已禁用，改用 i18n 多语言方案 -->
+	<!-- <script src="js/language-switcher.js"></script> -->
+
+	<!-- 自定义轮播脚本 - 无外部依赖 -->
+	<script>
+	(function() {
+	    const carousel = {
+	        currentSlide: 0,
+	        slides: [],
+	        totalSlides: 0,
+	        autoplayInterval: null,
+	        autoplayDelay: 3000,
+	        
+	        init: function() {
+	            this.slides = document.querySelectorAll('.carousel-slide');
+	            this.totalSlides = this.slides.length;
+	            
+	            if (this.totalSlides === 0) {
+	                console.log('没有找到轮播幻灯片');
+	                return;
+	            }
+	            
+	            // 创建导航点
+	            this.createDots();
+	            
+	            // 绑定按钮事件
+	            var self = this;
+	            document.getElementById('prevBtn').addEventListener('click', function() {
+	                self.prevSlide();
+	            });
+	            document.getElementById('nextBtn').addEventListener('click', function() {
+	                self.nextSlide();
+	            });
+	            
+	            // 启动自动播放
+	            this.startAutoplay();
+	            
+	            // 鼠标悬停暂停
+	            var wrapper = document.querySelector('.carousel-wrapper');
+	            wrapper.addEventListener('mouseenter', function() {
+	                self.stopAutoplay();
+	            });
+	            wrapper.addEventListener('mouseleave', function() {
+	                self.startAutoplay();
+	            });
+	            
+	            console.log('轮播初始化成功，共 ' + this.totalSlides + ' 张幻灯片');
+	            this.showSlide(0);
+	        },
+	        
+	        createDots: function() {
+	            var container = document.getElementById('dotsContainer');
+	            container.innerHTML = '';
+	            var self = this;
+	            
+	            for (var i = 0; i < this.totalSlides; i++) {
+	                var dot = document.createElement('div');
+	                dot.className = 'carousel-dot';
+	                (function(index) {
+	                    dot.addEventListener('click', function() {
+	                        self.showSlide(index);
+	                    });
+	                })(i);
+	                container.appendChild(dot);
+	            }
+	        },
+	        
+	        showSlide: function(n) {
+	            // 无限循环
+	            this.currentSlide = (n + this.totalSlides) % this.totalSlides;
+	            
+	            // 隐藏所有幻灯片
+	            for (var i = 0; i < this.slides.length; i++) {
+	                this.slides[i].classList.remove('active');
+	            }
+	            
+	            // 更新所有点的状态
+	            var dots = document.querySelectorAll('.carousel-dot');
+	            for (var i = 0; i < dots.length; i++) {
+	                dots[i].classList.remove('active');
+	                if (i === this.currentSlide) {
+	                    dots[i].classList.add('active');
+	                }
+	            }
+	            
+	            // 显示当前幻灯片
+	            this.slides[this.currentSlide].classList.add('active');
+	        },
+	        
+	        nextSlide: function() {
+	            this.showSlide(this.currentSlide + 1);
+	            this.resetAutoplay();
+	        },
+	        
+	        prevSlide: function() {
+	            this.showSlide(this.currentSlide - 1);
+	            this.resetAutoplay();
+	        },
+	        
+	        startAutoplay: function() {
+	            if (this.autoplayInterval) return;
+	            var self = this;
+	            this.autoplayInterval = setInterval(function() {
+	                self.nextSlide();
+	            }, this.autoplayDelay);
+	        },
+	        
+	        stopAutoplay: function() {
+	            if (this.autoplayInterval) {
+	                clearInterval(this.autoplayInterval);
+	                this.autoplayInterval = null;
+	            }
+	        },
+	        
+	        resetAutoplay: function() {
+	            this.stopAutoplay();
+	            this.startAutoplay();
+	        }
+	    };
+	    
+	    // DOM 加载完成后初始化
+	    if (document.readyState === 'loading') {
+	        document.addEventListener('DOMContentLoaded', function() {
+	            carousel.init();
+	        });
+	    } else {
+	        carousel.init();
+	    }
+	})();
+	</script>
+
+	<!-- Language Switcher Script -->
+	<script src="js/language-switcher.js"></script>
+	<!-- Floating Contact Button -->
+	<script src="js/float-contact.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Leave a message for TAON Advertising Studio - Get in touch with our creative team. Share your project ideas and inquiries.">
+    <meta name="author" content="TAON Advertising Studio">
+    <meta name="keywords" content="contact form, leave message, get in touch, TAON advertising, project inquiry">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taonadvertising.com/leave-message.html">
+    <meta property="og:title" content="Leave A Message - TAON Advertising Studio">
+    <meta property="og:description" content="Leave a message for TAON Advertising Studio - Get in touch with our creative team.">
+    <meta property="og:image" content="https://taonadvertising.com/images/logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://taonadvertising.com/leave-message.html">
+    <meta property="twitter:title" content="Leave A Message - TAON Advertising Studio">
+    <meta property="twitter:description" content="Leave a message for TAON Advertising Studio - Get in touch with our creative team.">
+    <meta property="twitter:image" content="https://taonadvertising.com/images/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    
+    <title data-i18n="leave_message.title">Leave A Message - TAON Advertising Studio</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body class="sub-page leave-message-page">
+<div class="wrap-body">
+
+    <!-- Header (reuse existing nav structure) -->
+    <header>
+		<!---Main Header--->
+		<div class="main-header">
+
+			<!--Navigation-->
+			<nav id="menu" class="navbar">
+				<div class="container-fluid">
+					<div class="navbar-header">
+					  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+						<a class="navbar-brand" href="#">
+							<img src="images/logo.png" alt="TAON logo" />
+							<span class="company-name" data-i18n="company.name">Advertising Studio</span>
+						</a>
+					</div>
+
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						<ul class="nav navbar-nav">
+						<li><a href="index.html" data-i18n="nav.home">Home</a></li>
+						<li><a href="single.html" data-i18n="nav.about">ABOUT</a></li>
+						<li><a href="services.html" data-i18n="nav.services">SERVICES</a></li>
+						<li><a href="archive.html" data-i18n="nav.case">CASE</a></li>
+						<li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+						<li class="nav-language"><div id="react-language-switcher"><span class="globe-fallback" aria-hidden="true">🌐</span></div></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+			<div class="header-text">
+                <div class="header-text-inner">
+                    <p class="wow fadeIn" data-i18n="leave_message.subtitle">Get in touch with us</p>
+                    <h1 class="wow fadeInLeft" data-i18n="leave_message.title">Leave A Message</h1>
+                </div>
+		</div>
+	</header>
+
+    <div id="page-content">
+        <div class="box-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <!-- Service Context Banner -->
+                        <div id="service-context" class="service-context-banner" style="display: none;">
+                            <p><i class="fa fa-info-circle"></i> <span id="service-context-text"></span> 
+                            <a href="services.html" class="back-link" data-i18n="leave_message.back_to_services">Back to Services</a></p>
+                            <!-- Hidden element for translation template -->
+                            <span data-i18n="leave_message.service_context" style="display: none;">Inquiry about: {service}</span>
+                        </div>
+                        
+                        <!-- Message Board -->
+                        <div class="box-item message-board-section">
+                            <div class="message-board-header">
+                                <h2 class="footer-title" data-i18n="message_board.title">Message Board</h2>
+                                <div class="header-actions">
+                                    <span id="storage-mode-indicator" class="storage-mode-indicator" style="display: none; font-size: 12px; color: #999; margin-right: 10px;"></span>
+                                    <button class="btn btn-default btn-sm" id="refresh-messages" data-i18n="message_board.refresh">Refresh</button>
+                                </div>
+                            </div>
+                            <div id="message-board-container">
+                                <div id="message-board-loading" class="text-center" style="padding: 40px;">
+                                    <i class="fa fa-spinner fa-spin fa-2x"></i>
+                                    <p data-i18n="message_board.loading">Loading messages...</p>
+                                </div>
+                                <div id="message-board-list" style="display: none;"></div>
+                                <div id="message-board-empty" style="display: none; padding: 40px; text-align: center;">
+                                    <i class="fa fa-comments fa-3x" style="color: #ccc; margin-bottom: 15px;"></i>
+                                    <p data-i18n="message_board.no_messages">No messages yet. Be the first to leave a message!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Message Form -->
+                        <div class="box-item message-form-section">
+                            <h3 data-i18n="leave_message.form.title">Leave A Message</h3>
+                            <form id="leave_message_form" method="post">
+                                <div id="form-message" style="display: none; margin-bottom: 15px;"></div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="lm_name" data-i18n="leave_message.form.name">Your Name</label>
+                                            <input type="text" class="form-control input-lg" name="name" id="lm_name" 
+                                                   data-i18n-placeholder="leave_message.form.placeholder.name" 
+                                                   placeholder="Enter your name" required="required" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="lm_email" data-i18n="leave_message.form.email">Your Email</label>
+                                            <input type="email" class="form-control input-lg" name="email" id="lm_email" 
+                                                   data-i18n-placeholder="leave_message.form.placeholder.email" 
+                                                   placeholder="Enter your email" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="lm_subject" data-i18n="leave_message.form.subject">Subject</label>
+                                            <input type="text" class="form-control input-lg" name="subject" id="lm_subject" 
+                                                   data-i18n-placeholder="leave_message.form.placeholder.subject" 
+                                                   placeholder="Subject of your inquiry" required="required" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="lm_message" data-i18n="leave_message.form.message">Your Message</label>
+                                            <textarea name="message" id="lm_message" class="form-control" rows="4" cols="25" 
+                                                      data-i18n-placeholder="leave_message.form.placeholder.message" 
+                                                      placeholder="Tell us about your project..." required="required" style="height: 170px;"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-skin btn-block" id="lm_submit" data-i18n="leave_message.form.submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="wrap-footer">
+                
+            </div>
+            <div class="bottom-footer">
+                <ul class="list-inline footer-link link footer-social-icons">
+                    <li><a href="https://www.facebook.com/taonadvertisingstudio" target="_blank" title="Facebook" aria-label="Facebook" class="social-icon facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" title="Instagram" aria-label="Instagram" class="social-icon instagram"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#" title="X" aria-label="X" class="social-icon twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" title="YouTube" aria-label="YouTube" class="social-icon youtube"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#" title="Xiaohongshu" aria-label="Xiaohongshu" class="social-icon xiaohongshu"><i class="fa fa-heart"></i></a></li>
+                    <li><a href="#" title="TikTok" aria-label="TikTok" class="social-icon tiktok"><i class="fa fa-music"></i></a></li>
+                </ul>
+                <div class="copyright">
+                    <span>Copyright &copy; TAON Advertising Studio All rights reserved.</span>
+                </div>
+            </div> 
+        </div>
+    </footer>
+
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script src="js/message-board.js"></script>
+    <script>
+    (function() {
+        // Get URL parameter helper function (shared)
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+        
+        // Service context handling
+        function initServiceContext() {
+            var serviceName = getUrlParameter('service');
+            if (serviceName) {
+                // Show service context banner
+                var contextBanner = document.getElementById('service-context');
+                var contextText = document.getElementById('service-context-text');
+                
+                if (contextBanner && contextText) {
+                    // Wait for translations to load
+                    setTimeout(function() {
+                        // Get translation from the page (after localization)
+                        var contextElement = document.querySelector('[data-i18n="leave_message.service_context"]');
+                        if (contextElement) {
+                            var template = contextElement.textContent || contextElement.innerText || 'Inquiry about: {service}';
+                            var displayText = template.replace('{service}', serviceName);
+                            contextText.textContent = displayText;
+                        } else {
+                            // Fallback if translation not loaded
+                            var lang = document.documentElement.lang || 'en';
+                            var translations = {
+                                'en': 'Inquiry about: ',
+                                'zh': '咨询项目：',
+                                'zh-hant': '諮詢項目：',
+                                'fr': 'Demande concernant : ',
+                                'es': 'Consulta sobre: ',
+                                'ja': 'お問い合わせサービス：',
+                                'ko': '문의 서비스: ',
+                                'ru': 'Запрос по услуге: '
+                            };
+                            var prefix = translations[lang] || translations['en'];
+                            contextText.textContent = prefix + serviceName;
+                        }
+                        contextBanner.style.display = 'block';
+                        
+                        // Auto-fill subject field
+                        var subjectField = document.getElementById('lm_subject');
+                        if (subjectField && !subjectField.value) {
+                            var lang = document.documentElement.lang || 'en';
+                            var subjectPrefix = {
+                                'en': 'Inquiry about: ',
+                                'zh': '咨询：',
+                                'zh-hant': '諮詢：',
+                                'fr': 'Demande concernant : ',
+                                'es': 'Consulta sobre: ',
+                                'ja': 'お問い合わせ：',
+                                'ko': '문의: ',
+                                'ru': 'Запрос: '
+                            };
+                            subjectField.value = (subjectPrefix[lang] || subjectPrefix['en']) + serviceName;
+                        }
+                    }, 800);
+                }
+            }
+        }
+        
+        // Update placeholders when language changes
+        function updatePlaceholders() {
+            var lang = document.documentElement.lang || 'en';
+            var placeholders = {
+                'en': {
+                    name: 'Enter your name',
+                    email: 'Enter your email',
+                    subject: 'Subject of your inquiry',
+                    message: 'Tell us about your project...'
+                },
+                'zh': {
+                    name: '请输入您的姓名',
+                    email: '请输入您的邮箱',
+                    subject: '咨询主题',
+                    message: '请告诉我们您的项目需求...'
+                },
+                'zh-hant': {
+                    name: '請輸入您的姓名',
+                    email: '請輸入您的郵箱',
+                    subject: '諮詢主題',
+                    message: '請告訴我們您的項目需求...'
+                },
+                'fr': {
+                    name: 'Entrez votre nom',
+                    email: 'Entrez votre email',
+                    subject: 'Sujet de votre demande',
+                    message: 'Parlez-nous de votre projet...'
+                },
+                'es': {
+                    name: 'Ingrese su nombre',
+                    email: 'Ingrese su email',
+                    subject: 'Asunto de su consulta',
+                    message: 'Cuéntenos sobre su proyecto...'
+                },
+                'ja': {
+                    name: 'お名前を入力',
+                    email: 'メールアドレスを入力',
+                    subject: 'お問い合わせ件名',
+                    message: 'プロジェクトについてお聞かせください...'
+                },
+                'ko': {
+                    name: '이름을 입력하세요',
+                    email: '이메일을 입력하세요',
+                    subject: '문의 제목',
+                    message: '프로젝트에 대해 알려주세요...'
+                },
+                'ru': {
+                    name: 'Введите ваше имя',
+                    email: 'Введите ваш email',
+                    subject: 'Тема вашего запроса',
+                    message: 'Расскажите нам о вашем проекте...'
+                }
+            };
+            
+            var ph = placeholders[lang] || placeholders['en'];
+            var nameField = document.getElementById('lm_name');
+            var emailField = document.getElementById('lm_email');
+            var subjectField = document.getElementById('lm_subject');
+            var messageField = document.getElementById('lm_message');
+            
+            if (nameField) nameField.placeholder = ph.name;
+            if (emailField) emailField.placeholder = ph.email;
+            if (subjectField && !subjectField.value) subjectField.placeholder = ph.subject;
+            if (messageField) messageField.placeholder = ph.message;
+        }
+        
+        // Listen for language changes
+        document.addEventListener('languageChange', function() {
+            updatePlaceholders();
+            initServiceContext();
+        });
+        
+        // Load form data from contact page (if available)
+        function loadContactFormData() {
+            var nameField = document.getElementById('lm_name');
+            var emailField = document.getElementById('lm_email');
+            var subjectField = document.getElementById('lm_subject');
+            var messageField = document.getElementById('lm_message');
+            
+            var formData = null;
+            
+            // Try to load from URL parameters first (more reliable)
+            // Compatible with older browsers that don't support URLSearchParams
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(window.location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            }
+            
+            if (getUrlParameter('from') === 'contact') {
+                formData = {
+                    name: getUrlParameter('name') || '',
+                    email: getUrlParameter('email') || '',
+                    subject: getUrlParameter('subject') || '',
+                    message: getUrlParameter('message') || ''
+                };
+            }
+            
+            // Fallback to sessionStorage if URL params not available
+            if (!formData || !formData.name) {
+                try {
+                    if (typeof(Storage) !== "undefined" && sessionStorage) {
+                        var storedData = sessionStorage.getItem('contactFormData');
+                        if (storedData) {
+                            formData = JSON.parse(storedData);
+                            // Clear stored data after loading
+                            sessionStorage.removeItem('contactFormData');
+                        }
+                    }
+                } catch (e) {
+                    console.warn('sessionStorage not available:', e);
+                }
+            }
+            
+            // Fill form fields if data is available
+            if (formData && formData.name && formData.email && formData.message) {
+                if (nameField && formData.name) nameField.value = formData.name;
+                if (emailField && formData.email) emailField.value = formData.email;
+                if (subjectField && formData.subject) subjectField.value = formData.subject;
+                if (messageField && formData.message) messageField.value = formData.message;
+                
+                // Auto-submit the form after a short delay to ensure message-board.js is ready
+                return true; // Return true to indicate data was loaded
+            }
+            return false; // Return false if no data was loaded
+        }
+        
+        // Auto-submit form if data came from contact page
+        function autoSubmitContactForm() {
+            // Wait for message-board.js to initialize (it has a 500ms setTimeout)
+            // Also wait for form handlers to be set up
+            var attempts = 0;
+            var maxAttempts = 15; // Increased attempts
+            
+            function trySubmit() {
+                attempts++;
+                console.log('Auto-submit attempt:', attempts);
+                
+                var form = document.getElementById('leave_message_form');
+                if (!form) {
+                    console.log('Form not found, retrying...');
+                    if (attempts < maxAttempts) {
+                        setTimeout(trySubmit, 300);
+                    }
+                    return;
+                }
+                
+                var nameField = document.getElementById('lm_name');
+                var emailField = document.getElementById('lm_email');
+                var messageField = document.getElementById('lm_message');
+                var submitBtn = document.getElementById('lm_submit');
+                
+                // Check if form has data and is from contact page
+                if (nameField && emailField && messageField && submitBtn &&
+                    nameField.value && emailField.value && messageField.value) {
+                    
+                    var fromContact = getUrlParameter('from') === 'contact';
+                    if (fromContact) {
+                        console.log('Auto-submitting form from contact page...');
+                        console.log('Form data:', {
+                            name: nameField.value,
+                            email: emailField.value,
+                            subject: nameField.value ? (document.getElementById('lm_subject') ? document.getElementById('lm_subject').value : '') : '',
+                            message: messageField.value
+                        });
+                        
+                        // Check if message-board.js has set up the form handler
+                        // Try to trigger form submission
+                        setTimeout(function() {
+                            // First try clicking the button
+                            if (submitBtn && !submitBtn.disabled) {
+                                console.log('Clicking submit button...');
+                                submitBtn.click();
+                            } else {
+                                // If button is disabled or not found, try form submit event
+                                console.log('Button not available, trying form submit event...');
+                                if (form) {
+                                    var submitEvent = new Event('submit', { bubbles: true, cancelable: true });
+                                    form.dispatchEvent(submitEvent);
+                                }
+                            }
+                        }, 500);
+                    } else {
+                        console.log('Not from contact page, skipping auto-submit');
+                    }
+                } else {
+                    console.log('Form data incomplete, retrying...', {
+                        hasName: !!nameField && !!nameField.value,
+                        hasEmail: !!emailField && !!emailField.value,
+                        hasMessage: !!messageField && !!messageField.value,
+                        hasSubmitBtn: !!submitBtn
+                    });
+                    if (attempts < maxAttempts) {
+                        setTimeout(trySubmit, 300);
+                    }
+                }
+            }
+            
+            // Start trying after initial delay (wait for message-board.js init)
+            setTimeout(trySubmit, 2500);
+        }
+        
+        // Initialize on page load
+        $(document).ready(function(){
+            var hasContactData = loadContactFormData();
+            
+            setTimeout(function(){
+                if (!hasContactData) {
+                    $('#lm_name').focus();
+                }
+            }, 200);
+            
+            initServiceContext();
+            updatePlaceholders();
+            
+            // Auto-submit if data came from contact page
+            if (hasContactData) {
+                autoSubmitContactForm();
+            }
+        });
+    })();
+    </script>
+
+</div>
+</body>
+</html>
