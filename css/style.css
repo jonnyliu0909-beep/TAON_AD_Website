@@ -1578,12 +1578,19 @@ html body.index-page nav#menu .navbar-brand .company-name {
 .btn-platform-ios:hover { background: #333; color: #fff !important; transform: translateY(-2px); }
 .btn-platform-android { background: #3DDC84; color: #1a1a1a !important; }
 .btn-platform-android:hover { background: #2ec870; color: #1a1a1a !important; transform: translateY(-2px); }
+.app-card-icon-wechat { background: linear-gradient(135deg, #07c160 0%, #09bb6e 100%); }
+.app-wechat-badge { background: #07c160 !important; }
+.app-qrcode-section { margin-top: 16px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.app-qrcode-label { font-size: 14px; color: #07c160; font-weight: 600; margin: 0; }
+.app-qrcode-img { width: 150px; height: 150px; object-fit: contain; border: 1px solid #e0e0e0; border-radius: 8px; padding: 6px; background: #fff; }
 @media (max-width: 767px) {
     .app-card { flex-direction: column; align-items: center; text-align: center; padding: 20px; gap: 16px; }
     .app-card-header { justify-content: center; }
     .app-platform-btns { justify-content: center; }
     .app-card-icon { width: 80px; height: 80px; }
     .app-card-icon .app-icon-placeholder { font-size: 38px; }
+    .app-qrcode-section { align-items: center; }
+    .app-qrcode-img { width: 130px; height: 130px; }
 }
 
 /* ===== MOBILE OVERRIDE: allow company-name to wrap on very narrow screens (≤380px) ===== */

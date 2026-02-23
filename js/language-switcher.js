@@ -16,7 +16,7 @@
   function getSavedLanguage(){
     try{
       const v = localStorage.getItem(STORAGE_KEY)
-      return v || 'en'
+      return v || 'zh'
     }catch(err){
       console.warn('language-switcher: localStorage unavailable, falling back to en', err)
       return 'en'
