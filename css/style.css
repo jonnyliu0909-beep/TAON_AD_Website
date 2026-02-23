@@ -257,26 +257,31 @@ body.sub-page .header-text{padding-left: 10%;margin-top: 12vh;}
 }
 
 @media(max-width:767px) {
-	#menu{background: #1D2027;padding: 10px 0;}
-	#menu .navbar-brand {display: flex !important;flex-direction: row !important;color: #fff;margin-top: 10px;flex-wrap: nowrap !important;gap: 8px;align-items: center !important;}
+	/* 保持与桌面/平板一致：白色背景 + 深色文字 */
+	#menu{background: #fff;padding: 10px 0;}
+	/* 汉堡按钮：深色图标配白色背景 */
+	#menu .btn-navbar {color: #333 !important;border-color: #333 !important;}
+	#menu .navbar-brand {display: flex !important;flex-direction: row !important;color: #333;margin-top: 10px;flex-wrap: nowrap !important;gap: 8px;align-items: center !important;}
 	/* Keep logo size consistent on mobile */
 	#menu .navbar-brand img { width: 100px !important; height: auto !important; }
-	/* Company name on mobile - proportional scaling */
+	/* Company name on mobile - same dark color as desktop */
 	#menu .navbar-brand .company-name {
 		font-size: 20px !important;
-		color: #fff !important;
+		color: #333 !important;
 	}
-	/* Smaller on very small screens */
+	/* Smaller on very small screens: reduce font, allow wrapping to avoid pushing hamburger */
 	@media(max-width:480px) {
 		#menu .navbar-brand .company-name {
 			font-size: 16px !important;
+			white-space: normal !important;
+			max-width: calc(100vw - 160px);
 		}
 	}
 	#menu div.dropdown-inner > ul.list-unstyled {display: block;}
-	#menu .dropdown-inner a {width: 100%;color: #fff;}
-	#menu div.dropdown-menu {margin-left: 0 !important;	padding-bottom: 10px;background-color: rgba(0, 0, 0, 0.1);}
-	/* Keep nav font size consistent on mobile */
-	#menu ul.nav li a{color: #fff; font-size: 16px !important; padding: 8px 12px !important; font-weight: bold !important;}
+	#menu .dropdown-inner a {width: 100%;color: #333;}
+	#menu div.dropdown-menu {margin-left: 0 !important;padding-bottom: 10px;background-color: rgba(0, 0, 0, 0.05);}
+	/* Nav links: same dark color as desktop */
+	#menu ul.nav li a{color: #333 !important; font-size: 16px !important; padding: 8px 12px !important; font-weight: bold !important;}
 }
 
 /* ---------------------------------------------------------------------------- */
@@ -294,6 +299,9 @@ body.sub-page .header-text{padding-left: 10%;margin-top: 12vh;}
 
 /* ---HomePage--- */
 .box-content {padding: 100px 0;}
+/* Mobile: reduce section padding to avoid excessive blank space */
+@media(max-width:767px) { .box-content { padding: 60px 0; } }
+@media(max-width:480px) { .box-content { padding: 40px 0; } }
 .box-content .heading{margin-bottom: 70px; text-align: center;}
 .box-content .heading h2{color: #2b2d3f;font-size: 30px;text-transform: uppercase;font-weight: 800;letter-spacing: 8px}
 .box-content .heading .intro{max-width: 300px;margin: auto}
@@ -1325,22 +1333,23 @@ a.btn:focus{outline: 0;}
     transform: translateY(-18%) scale(1.05);
   }
 }
+/* 767px 以下改为 2 列，确保卡片内容可读 */
 @media (max-width: 767px){
-  .services-grid{ --service-gap: 20px }
+  .services-grid{ --service-gap: 16px }
   .row.services-grid > [class*="col-"]{ 
     padding-left: calc(var(--service-gap) / 2); 
     padding-right: calc(var(--service-gap) / 2); 
   }
   .row.services-grid > [class*="col-"]{ 
-    flex: 0 0 25% !important; 
-    max-width: 25% !important; 
+    flex: 0 0 50% !important; 
+    max-width: 50% !important; 
   }
   .services-grid .service-item{ 
-    padding: calc(var(--service-gap) / 2 + 12px) 10px 16px;
+    padding: calc(var(--service-gap) / 2 + 12px) 12px 18px;
     border-radius: 6px;
   }
   .services-grid .service-item .icon{ 
-    --icon-size: min(40%, 90px); 
+    --icon-size: min(50%, 100px); 
     transform: translateY(-14%);
     border-width: 3px;
   }
@@ -1350,6 +1359,19 @@ a.btn:focus{outline: 0;}
   .services-grid .service-item:hover {
     transform: translateY(-3px);
   }
+  .services-grid .service-item h3 {
+    font-size: clamp(12px, 2.5vw, 15px);
+  }
+}
+/* 480px 以下改为 1 列，手机竖屏最优体验 */
+@media (max-width: 480px){
+  .row.services-grid > [class*="col-"]{ 
+    flex: 0 0 100% !important; 
+    max-width: 100% !important; 
+  }
+  .services-grid .service-item .icon{
+    --icon-size: min(35%, 100px);
+  }
 }
 
 /* ===== UNIFIED NAVBAR STYLES - ALL PAGES INCLUDING INDEX ===== */
@@ -1357,8 +1379,14 @@ a.btn:focus{outline: 0;}
 /* Background images (showcase_bg.jpg vs sup_showcase_bg.jpg) do NOT affect navbar styles */
 /* Use very specific selectors to override Bootstrap and any other styles */
 /* CRITICAL: Prevent any scaling on index-page that makes elements 33% larger */
+/* 仅针对结构性布局元素，不使用 * 通配符以避免破坏 hover 动画和 transform 效果 */
 html body.index-page,
-html body.index-page * {
+html body.index-page .wrap-body,
+html body.index-page header,
+html body.index-page .main-header,
+html body.index-page #menu,
+html body.index-page .navbar-header,
+html body.index-page .navbar-collapse {
     transform: none !important;
     -webkit-transform: none !important;
     -moz-transform: none !important;
@@ -1469,4 +1497,104 @@ html body.index-page nav#menu .navbar-brand .company-name {
     font-weight: 600 !important;
     transform: none !important;
     scale: 1 !important;
+}
+
+/* ===== APP DOWNLOAD PAGE - App Card Layout ===== */
+.app-list { max-width: 860px; margin: 0 auto; }
+.app-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s ease;
+}
+.app-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+.app-card-icon {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #42AB9E, #2d8a7d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-card-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
+.app-card-icon .app-icon-placeholder { font-size: 48px; color: #fff; }
+.app-card-body { flex: 1; min-width: 0; }
+.app-card-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+.app-card-header h2 { font-size: 22px; margin: 0; color: #2b2d3f; }
+.app-sync-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #e8f8f6;
+    color: #42AB9E;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid #b2e0db;
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+}
+.app-category {
+    font-size: 12px;
+    color: #aaa;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.app-desc { font-size: 15px; color: #555; line-height: 1.75; margin-bottom: 20px; }
+.app-platform-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-platform {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+}
+.btn-platform i { font-size: 18px; }
+.btn-platform-windows { background: #0078D4; color: #fff !important; }
+.btn-platform-windows:hover { background: #006abc; color: #fff !important; transform: translateY(-2px); }
+.btn-platform-ios { background: #111; color: #fff !important; }
+.btn-platform-ios:hover { background: #333; color: #fff !important; transform: translateY(-2px); }
+.btn-platform-android { background: #3DDC84; color: #1a1a1a !important; }
+.btn-platform-android:hover { background: #2ec870; color: #1a1a1a !important; transform: translateY(-2px); }
+@media (max-width: 767px) {
+    .app-card { flex-direction: column; align-items: center; text-align: center; padding: 20px; gap: 16px; }
+    .app-card-header { justify-content: center; }
+    .app-platform-btns { justify-content: center; }
+    .app-card-icon { width: 80px; height: 80px; }
+    .app-card-icon .app-icon-placeholder { font-size: 38px; }
+}
+
+/* ===== MOBILE OVERRIDE: allow company-name to wrap on very narrow screens (≤380px) ===== */
+/* Must be at the end of file with highest specificity to override all nowrap !important above */
+@media (max-width: 380px) {
+    html body #menu .navbar-brand .company-name,
+    html body.index-page #menu .navbar-brand .company-name,
+    html body.sub-page #menu .navbar-brand .company-name {
+        white-space: normal !important;
+        font-size: 14px !important;
+        max-width: calc(100vw - 150px);
+        line-height: 1.3 !important;
+    }
 }

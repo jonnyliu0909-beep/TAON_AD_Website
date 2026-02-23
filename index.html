@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="TAON Advertising Studio - Creative branding, design, and digital solutions. Talent | Ambition | Originality | Networking. We handle the details. You enjoy the results.">
     <meta name="author" content="TAON Advertising Studio">
-    <meta name="keywords" content="advertising, branding, graphic design, web development, print services, Toronto, Shanghai">
+    <meta name="keywords" content="advertising, branding, graphic design, web development, print services, Shanghai">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -46,9 +46,14 @@
         /* ===== 强制统一导航栏和Logo样式 ===== */
         /* 确保 index.html 的导航栏和 logo 与其他页面完全一致 */
         /* 使用最高优先级确保覆盖所有其他样式 */
-        /* 防止整个页面被缩放 */
+        /* 防止整个页面被缩放（仅针对结构元素，避免破坏动画） */
         html body.index-page,
-        html body.index-page * {
+        html body.index-page .wrap-body,
+        html body.index-page header,
+        html body.index-page .main-header,
+        html body.index-page #menu,
+        html body.index-page .navbar-header,
+        html body.index-page .navbar-collapse {
             transform: none !important;
             -webkit-transform: none !important;
             -moz-transform: none !important;
@@ -57,7 +62,9 @@
             zoom: 1 !important;
         }
         body.index-page #menu,
-        body.index-page #menu * {
+        body.index-page #menu .navbar-header,
+        body.index-page #menu .navbar-brand,
+        body.index-page #menu .navbar-collapse {
             transform: none !important;
             -webkit-transform: none !important;
             -moz-transform: none !important;
@@ -353,18 +360,40 @@
         }
         @media(max-width:767px) {
             .header-title-with-capitals {
-                font-size: 42px; /* 28px * 1.5 */
+                font-size: 36px;
             }
             .header-title-translation {
-                font-size: 24px; /* 16px * 1.5 */
+                font-size: 20px;
             }
             body.index-page .header-text p[data-i18n="header.subtitle"] {
-                font-size: 21px !important; /* 14px * 1.5，保持合理比例 */
-                letter-spacing: 6px !important;
+                font-size: 18px !important;
+                letter-spacing: 4px !important;
             }
             body.index-page .header-text .header-text-inner {
-                padding: 20px 30px !important;
+                padding: 16px 24px !important;
                 max-width: 95vw;
+            }
+        }
+        /* 极窄屏（≤480px）：防止超大字体溢出黑框 */
+        @media(max-width:480px) {
+            .header-title-with-capitals {
+                font-size: 26px;
+                line-height: 1.5;
+            }
+            .header-title-with-capitals .word-capital {
+                font-size: 1.25em; /* 原来 1.5em，缩小到 1.25em */
+            }
+            .header-title-translation {
+                font-size: 15px;
+                margin-bottom: 12px;
+            }
+            body.index-page .header-text p[data-i18n="header.subtitle"] {
+                font-size: 14px !important;
+                letter-spacing: 2px !important;
+            }
+            body.index-page .header-text .header-text-inner {
+                padding: 14px 18px !important;
+                max-width: 92vw;
             }
         }
     </style>
@@ -401,6 +430,7 @@
 						<li><a href="services.html" data-i18n="nav.services">SERVICES</a></li>
 						<li><a href="archive.html" data-i18n="nav.case">CASE</a></li>
 						<li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+					<li><a href="app-download.html" data-i18n="nav.appDownload">APP DOWNLOAD</a></li>
 						<li class="nav-language"><div id="react-language-switcher"><span class="globe-fallback" aria-hidden="true">🌐</span></div></li>
 						</ul>
 					</div>
@@ -484,6 +514,15 @@
 		                        <div class="img-wrap"><img src="images/a22.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 22"/></div>
 		                        <div class="img-wrap"><img src="images/a23.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 23"/></div>
 		                        <div class="img-wrap"><img src="images/a24.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 24"/></div>
+		                    </div>
+		                </div>
+                         <!-- Slide 7: 4 images (a25-a28) -->
+		                <div class="carousel-slide">
+		                    <div class="home-three-slide">
+                                <div class="img-wrap"><img src="images/a25.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 25"/></div>
+                                <div class="img-wrap"><img src="images/a26.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 26"/></div>
+                                <div class="img-wrap"><img src="images/a27.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 27"/></div>
+                                <div class="img-wrap"><img src="images/a28.png" alt="TAON Advertising Portfolio - Creative Brand Design Project 28"/></div>
 		                    </div>
 		                </div>
 
