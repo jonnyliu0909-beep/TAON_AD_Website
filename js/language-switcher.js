@@ -348,7 +348,7 @@
     "appdownload.app2.category": "医疗 · 预约",
     "appdownload.app2.desc": "便捷的就诊预约平台，通过微信扫码直接进入小程序，快速完成预约挂号、查看就诊进度。",
     "appdownload.app2.qr.label": "微信扫码体验",
-    "appdownload.app3.name": "游伴管家",
+    "appdownload.app3.name": "游伴管家小程序",
     "appdownload.app3.category": "游戏 · 社群",
     "appdownload.app3.desc": "专为游戏社群打造的俱乐部管理工具。订单分成自动计算，收入统计一目了然，排行榜每日更新，成员公告管理全覆盖。即开即用。",
     "appdownload.app3.qr.label": "微信扫码体验"
@@ -481,7 +481,7 @@
     "appdownload.app2.category": "醫療 · 預約",
     "appdownload.app2.desc": "便捷的就診預約平台，透過微信掃碼直接進入小程式，快速完成預約掛號、查看就診進度。",
     "appdownload.app2.qr.label": "微信掃碼體驗",
-    "appdownload.app3.name": "遊伴管家",
+    "appdownload.app3.name": "遊伴管家小程序",
     "appdownload.app3.category": "遊戲 · 社群",
     "appdownload.app3.desc": "專為遊戲社群打造的俱樂部管理工具。訂單分成自動計算，收入統計一目了然，排行榜每日更新，成員公告管理全覆蓋。即開即用。",
     "appdownload.app3.qr.label": "微信掃碼體驗"
