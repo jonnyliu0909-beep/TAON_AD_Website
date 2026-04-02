@@ -21,6 +21,10 @@
   "appdownload.app2.category": "의료 · 예약",
   "appdownload.app2.desc": "편리한 진료 예약 플랫폼. WeChat으로 QR 코드를 스캔하여 미니 프로그램에 접속하고 즉시 예약 및 진료 상태를 확인하세요.",
   "appdownload.app2.qr.label": "WeChat으로 스캔",
+  "appdownload.app3.name": "GameBuddy Pro",
+  "appdownload.app3.category": "게임 · 커뮤니티",
+  "appdownload.app3.desc": "게임 커뮤니티 전용 클럽 관리 도구입니다. 주문 분배 자동 계산, 수입 통계 한눈에 보기, 일일 랭킹 업데이트, 멤버 공지 관리 전체 커버. 즉시 사용 가능.",
+  "appdownload.app3.qr.label": "WeChat으로 스캔"
   "header.title": "재능 | 야망 | 독창성 | 네트워킹",
   "header.title.translation": "재능 | 야망 | 독창성 | 네트워킹",
   "header.subtitle": "우리는 세부 사항을 처리합니다. 당신은 결과를 즐기세요.",

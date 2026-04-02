@@ -21,6 +21,10 @@
   "appdownload.app2.category": "Medical · Appointment",
   "appdownload.app2.desc": "A convenient clinic appointment platform. Scan the QR code with WeChat to open the mini-program, book appointments and check your visit status instantly.",
   "appdownload.app2.qr.label": "Scan with WeChat",
+  "appdownload.app3.name": "GameBuddy Pro",
+  "appdownload.app3.category": "Gaming · Community",
+  "appdownload.app3.desc": "A club management tool tailored for gaming communities. Auto-calculates revenue splits, provides clear income statistics, daily leaderboard updates, and full member announcement management. Ready to use instantly.",
+  "appdownload.app3.qr.label": "Scan with WeChat"
   "header.title": "Talent | Ambition | Originality | Networking",
   "header.title.translation": "Talent | Ambition | Originality | Networking",
   "header.subtitle": "We handle the details. You enjoy the results.",

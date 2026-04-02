@@ -21,6 +21,10 @@
   "appdownload.app2.category": "医療 · 予約",
   "appdownload.app2.desc": "便利な診察予約プラットフォーム。WeChatでQRコードをスキャンしてミニプログラムを開き、すぐに予約・受診状況を確認できます。",
   "appdownload.app2.qr.label": "WeChatでスキャン",
+  "appdownload.app3.name": "GameBuddy Pro",
+  "appdownload.app3.category": "ゲーム · コミュニティ",
+  "appdownload.app3.desc": "ゲームコミュニティ向けに設計されたクラブ管理ツール。注文分配の自動計算、収入統計の一目瞭然、ランキングの毎日更新、メンバー告知管理を完全サポート。すぐ使えます。",
+  "appdownload.app3.qr.label": "WeChatでスキャン"
   "header.title": "才能 | 野心 | 独創性 | ネットワーキング",
   "header.title.translation": "才能 | 野心 | 独創性 | ネットワーキング",
   "header.subtitle": "私たちは詳細を扱います。あなたは結果を楽しんでください。",

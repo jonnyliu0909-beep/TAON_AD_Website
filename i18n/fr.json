@@ -21,6 +21,10 @@
   "appdownload.app2.category": "Médical · Rendez-vous",
   "appdownload.app2.desc": "Une plateforme de prise de rendez-vous médicaux pratique. Scannez le QR code avec WeChat pour accéder au mini-programme et réserver votre consultation en quelques secondes.",
   "appdownload.app2.qr.label": "Scanner avec WeChat",
+  "appdownload.app3.name": "GameBuddy Pro",
+  "appdownload.app3.category": "Jeux · Communauté",
+  "appdownload.app3.desc": "Un outil de gestion de club conçu pour les communautés de joueurs. Calcul automatique du partage des revenus, statistiques des revenus claires, classements mis à jour quotidiennement et gestion complète des annonces des membres. Prêt à l'emploi.",
+  "appdownload.app3.qr.label": "Scanner avec WeChat"
   "header.title": "Talent | Ambition | Originalité | Réseau",
   "header.title.translation": "Talent | Ambition | Originalité | Réseau",
   "header.subtitle": "Nous gérons les détails. Vous profitez des résultats.",
